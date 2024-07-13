@@ -11,7 +11,7 @@ export function LogoutButton() {
         await signOut();
       }}
     >
-      Login
+      Logout
     </Button>
   );
 }
