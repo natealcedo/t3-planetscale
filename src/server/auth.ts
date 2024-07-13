@@ -1,9 +1,10 @@
+import "server-only";
+
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { getServerSession, type DefaultSession, type NextAuthOptions } from "next-auth";
 import { type Adapter } from "next-auth/adapters";
 import Auth0 from "next-auth/providers/auth0";
 
-import { env } from "@/env";
 import { db } from "@/server/db";
 import { accounts, sessions, users, verificationTokens } from "@/server/db/schema";
 
@@ -49,11 +50,15 @@ export const authOptions: NextAuthOptions = {
     sessionsTable: sessions,
     verificationTokensTable: verificationTokens,
   }) as Adapter,
+  pages: {
+    signOut: undefined,
+    signIn: undefined,
+  },
   providers: [
     Auth0({
-      clientId: env.AUTH0_CLIENT_SECRET,
-      clientSecret: env.AUTH0_CLIENT_SECRET,
-      issuer: env.AUTH0_CLIENT_SECRET,
+      clientId: process.env.AUTH0_CLIENT_ID!,
+      clientSecret: process.env.AUTH0_CLIENT_SECRET!,
+      issuer: process.env.AUTH0_ISSUER!,
     }),
     /**
      * ...add more providers here.
