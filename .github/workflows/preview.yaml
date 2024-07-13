@@ -26,4 +26,6 @@ jobs:
       - name: Run Prisma db:push
         run: pnpm db:migrate
         env:
-          DATABASE_URL: ${{ secrets.PREVIEW_DATABASE_URL }}
+          PLANETSCALE_HOST: ${{ secrets.PLANETSCALE_HOST }}
+          PLANETSCALE_PASSWORD: ${{ secrets.PLANETSCALE_PASSWORD_PREVIEW }}
+          PLANETSCALE_USERNAME: ${{ secrets.PLANETSCALE_USERNAME_PREVIEW }}

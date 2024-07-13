@@ -5,4 +5,11 @@ import { env } from "@/env";
 
 import * as schema from "./schema";
 
-export const db = drizzle(new Client({ url: env.DATABASE_URL }), { schema });
+export const db = drizzle(
+  new Client({
+    host: env.PLANETSCALE_HOST,
+    username: env.PLANETSCALE_USERNAME,
+    password: env.PLANETSCALE_PASSWORD,
+  }),
+  { schema }
+);
