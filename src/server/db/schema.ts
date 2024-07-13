@@ -20,7 +20,7 @@ import { type AdapterAccount } from "next-auth/adapters";
 export const createTable = mysqlTableCreator((name) => name);
 
 export const posts = createTable(
-  "post",
+  "posts",
   {
     id: bigint("id", { mode: "number" }).primaryKey().autoincrement(),
     name: varchar("name", { length: 256 }),
@@ -36,7 +36,7 @@ export const posts = createTable(
   })
 );
 
-export const users = createTable("user", {
+export const users = createTable("users", {
   id: varchar("id", { length: 255 })
     .notNull()
     .primaryKey()
@@ -56,7 +56,7 @@ export const usersRelations = relations(users, ({ many }) => ({
 }));
 
 export const accounts = createTable(
-  "account",
+  "accounts",
   {
     userId: varchar("user_id", { length: 255 }).notNull(),
     type: varchar("type", { length: 255 }).$type<AdapterAccount["type"]>().notNull(),
@@ -85,7 +85,7 @@ export const accountsRelations = relations(accounts, ({ one }) => ({
 }));
 
 export const sessions = createTable(
-  "session",
+  "sessions",
   {
     sessionToken: varchar("session_token", { length: 255 }).notNull().primaryKey(),
     userId: varchar("user_id", { length: 255 }).notNull(),
@@ -101,7 +101,7 @@ export const sessionsRelations = relations(sessions, ({ one }) => ({
 }));
 
 export const verificationTokens = createTable(
-  "verification_token",
+  "verification_tokens",
   {
     identifier: varchar("identifier", { length: 255 }).notNull(),
     token: varchar("token", { length: 255 }).notNull(),
