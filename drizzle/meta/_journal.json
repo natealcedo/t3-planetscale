@@ -1,12 +1,12 @@
 {
-  "version": "6",
+  "version": "7",
   "dialect": "mysql",
   "entries": [
     {
       "idx": 0,
       "version": "5",
-      "when": 1720853289474,
-      "tag": "0000_green_morlun",
+      "when": 1720855674879,
+      "tag": "0000_special_electro",
       "breakpoints": true
     }
   ]

@@ -3,13 +3,10 @@ import { drizzle } from "drizzle-orm/planetscale-serverless";
 
 import { env } from "@/env";
 
-import * as schema from "./schema";
+const client = new Client({
+  host: env.PLANETSCALE_HOST,
+  username: env.PLANETSCALE_USERNAME,
+  password: env.PLANETSCALE_PASSWORD,
+});
 
-export const db = drizzle(
-  new Client({
-    host: env.PLANETSCALE_HOST,
-    username: env.PLANETSCALE_USERNAME,
-    password: env.PLANETSCALE_PASSWORD,
-  }),
-  { schema }
-);
+export const db = drizzle(client);

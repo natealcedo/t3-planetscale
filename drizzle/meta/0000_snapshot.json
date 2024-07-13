@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "d5d6b28c-c377-4780-90ab-e69e5a6aabe2",
+  "id": "fb1ac0ea-7162-4901-8478-4373932bc676",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "account": {
@@ -314,5 +314,9 @@
     "schemas": {},
     "tables": {},
     "columns": {}
+  },
+  "internal": {
+    "tables": {},
+    "indexes": {}
   }
 }
