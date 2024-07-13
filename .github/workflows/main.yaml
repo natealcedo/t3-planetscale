@@ -1,4 +1,4 @@
-name: Prisma DB Push on Main
+name: Migrate DB Push on Main
 
 on:
   push:

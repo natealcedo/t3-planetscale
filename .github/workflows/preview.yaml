@@ -1,4 +1,4 @@
-name: Prisma DB Push on non-Main Branches
+name: Migrate DB Push on non-Main Branches
 
 on:
   push:
