@@ -19,9 +19,7 @@ export const env = createEnv({
     AUTH0_CLIENT_ID: z.string(),
     AUTH0_CLIENT_SECRET: z.string(),
     AUTH0_ISSUER: z.string(),
-    PLANETSCALE_HOST: z.string(),
-    PLANETSCALE_USERNAME: z.string(),
-    PLANETSCALE_PASSWORD: z.string(),
+    DATABASE_URL: z.string().url(),
   },
 
   /**
@@ -44,9 +42,7 @@ export const env = createEnv({
     AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
     AUTH0_CLIENT_SECRET: process.env.AUTH0_CLIENT_SECRET,
     AUTH0_ISSUER: process.env.AUTH0_ISSUER,
-    PLANETSCALE_HOST: process.env.PLANETSCALE_HOST,
-    PLANETSCALE_USERNAME: process.env.PLANETSCALE_USERNAME,
-    PLANETSCALE_PASSWORD: process.env.PLANETSCALE_PASSWORD,
+    DATABASE_URL: process.env.DATABASE_URL,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

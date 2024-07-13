@@ -23,9 +23,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Run Prisma db:push
+      - name: Run migrations
         run: pnpm db:migrate
         env:
-          PLANETSCALE_HOST: ${{ secrets.PLANETSCALE_HOST }}
-          PLANETSCALE_PASSWORD: ${{ secrets.PLANETSCALE_PASSWORD }}
-          PLANETSCALE_USERNAME: ${{ secrets.PLANETSCALE_USERNAME }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
