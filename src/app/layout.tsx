@@ -19,7 +19,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
     <html lang="en" className={`${GeistSans.variable}`}>
       <body className="bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
         <nav className="flex h-[100px] justify-end p-8">
-          {!session ? <LoginButton /> : <LogoutButton />}
+          {!session ? <LoginButton /> : <LogoutButton user={session.user} />}
         </nav>
         <main className="flex min-h-screen flex-col items-center justify-center">{children}</main>
       </body>
